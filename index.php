@@ -40,11 +40,21 @@ require_once("config.php");
 // echo $newuser;
 
 //Atualizar alguma informação do usuário
+// $usuario = new Usuario();
+
+// $usuario->loadById(3);
+
+// $usuario->update("professor", "!@#$%&");
+
+// echo $usuario;
+
+//Deletar um usuário
+
 $usuario = new Usuario();
 
-$usuario->loadById(3);
+$usuario->loadById(7);
 
-$usuario->update("professor", "!@#$%&");
+$usuario->delete();
 
 echo $usuario;
 ?>
