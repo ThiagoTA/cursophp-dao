@@ -22,7 +22,21 @@ require_once("config.php");
 // echo json_encode($search);
 
 //Carregar um usuário usando o login e a senha 
-$usuario = new Usuario();
-$usuario->login("Thiago", "123456789");
-echo $usuario;
+// $usuario = new Usuario();
+// $usuario->login("Thiago", "123456789");
+// echo $usuario;
+
+//Inserir novo usuário
+
+//Inserir usuário usando construct
+$newuser = new Usuario("Lucas", "243212");
+
+//Metodo de inserir o usuario sem o modo construct
+// $newuser->setDeslogin("Samila");
+// $newuser->setDessenha("654342");
+
+$newuser->insert();
+
+echo $newuser;
+
 ?>
