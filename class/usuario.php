@@ -39,6 +39,7 @@ class Usuario {
          $this->dtcadastro = $value;
      }
 
+     //Mostrar o usuário desejado
      public function loadById($id) {
 
         $sql = new Sql();
@@ -118,10 +119,25 @@ class Usuario {
             $this->setData(($results[0]));
 
         }
+     }
 
+     //Atualizar um usuário
+     public function update($login, $password) {
+
+        $this->setDeslogin($login);
+        $this->setDessenha($password);    
+
+        $sql = new Sql();
+
+        $sql->execQuery("UPDATE tb_usuarios SET deslogin = :LOGIN, dessenha = :PASSWORD WHERE idusuario = :ID", array(
+            ':LOGIN'=>$this->getDeslogin(),
+            ':PASSWORD'=>$this->getDessenha(),
+            ':ID'=>$this->getIdusuario()
+    ));
 
      }
 
+     //Inserir usando o construct
      public function __construct($login = "", $password = "") {
          
         $this->setDeslogin($login);

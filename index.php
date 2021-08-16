@@ -29,14 +29,22 @@ require_once("config.php");
 //Inserir novo usuário
 
 //Inserir usuário usando construct
-$newuser = new Usuario("Lucas", "243212");
+// $newuser = new Usuario("Lucas", "243212");
 
 //Metodo de inserir o usuario sem o modo construct
 // $newuser->setDeslogin("Samila");
 // $newuser->setDessenha("654342");
 
-$newuser->insert();
+// $newuser->insert();
 
-echo $newuser;
+// echo $newuser;
 
+//Atualizar alguma informação do usuário
+$usuario = new Usuario();
+
+$usuario->loadById(3);
+
+$usuario->update("professor", "!@#$%&");
+
+echo $usuario;
 ?>
