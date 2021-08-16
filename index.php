@@ -25,8 +25,8 @@ require_once("config.php");
 
 //Carrega uma lista de usuários buscando pelo login
 
-$search = Usuario::search("sa");
-echo json_encode($search);
+// $search = Usuario::search("sa");
+// echo json_encode($search);
 
 //---------------------------------------------
 
@@ -69,4 +69,5 @@ echo json_encode($search);
 // $usuario->loadById(7);
 // $usuario->delete();
 // echo $usuario;
+
 ?>
